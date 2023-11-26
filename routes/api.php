@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GetDataController;
+use App\Http\Controllers\api\ProductsApiController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,12 +29,6 @@ Route::get('/sizes', function(){
 // https://arman.shamim07.com/api/sizes id,size_name
 
 
-Route::get('/datas', function(){
-    $User = User::latest()->get();
-    return response()->json($User);
-});
-
-
-Route::get('/get-data', [GetDataController::class, 'getData']);
+Route::get('/products-api', [ProductsApiController::class, 'getData']);
 
 
